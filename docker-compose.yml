@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  homebridge:
+    build: .
+    restart: always
+    network_mode: host
+    environment:
+      # PGID: 1000
+      # PUID: 1000
+      HOMEBRIDGE_CONFIG_UI: 1
+      HOMEBRIDGE_CONFIG_UI_PORT: 8080
+      TZ: America/New_York
+      HOMEBRIDGE_INSECURE: 1
+    volumes:
+      - ./volume:/homebridge

@@ -1,1 +1,7 @@
 test-volume
+.history/
+volume/*
+!volume/config.json
+!volume/package.json
+!volume/package-lock.json
+!volume/startup.sh

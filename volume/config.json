@@ -1,0 +1,66 @@
+{
+    "bridge": {
+        "name": "Homebridge",
+        "username": "DD:4C:1A:22:C0:8B",
+        "manufacturer": "homebridge.io",
+        "model": "homebridge",
+        "port": 51826,
+        "pin": "370-22-606"
+    },
+    "description": "My new smart home!! uwuwuwuw",
+    "platforms": [
+        {
+            "platform": "TplinkSmarthome",
+            "name": "TP-Link Smarthome",
+            "pollingInterval": 20,
+            "timeout": 15
+        },
+        {
+            "platform": "cmdSwitch2",
+            "name": "CMD Switch",
+            "switches": [
+                {
+                    "name": "test switch",
+                    "on_cmd": "echo 'on'",
+                    "off_cmd": "echo 'off'",
+                    "state_cmd": "echo 'ping'",
+                    "polling": true,
+                    "interval": 7000,
+                    "timeout": 2000,
+                    "manufacturer": "Dysomni",
+                    "model": "One",
+                    "serial": "XXXXXXXXXXX"
+                }
+            ]
+        },
+        {
+            "name": "Config",
+            "port": 8080,
+            "platform": "config"
+        }
+    ],
+    "accessories": [
+        {
+            "accessory": "DelaySwitch",
+            "name": "plasma ball timer",
+            "delay": 6000000,
+            "motionTime": 500,
+            "motionCount": 3,
+            "startOnReboot": true
+        },
+        {
+            "accessory": "CmdTrigger",
+            "name": "lock sophie",
+            "command": "ssh -T sophie.screensaver",
+            "delay": "2000",
+            "execAfterDelay": false
+        },
+        {
+            "accessory": "CmdTrigger",
+            "name": "lock dorian",
+            "command": "ssh -T dorian.screensaver",
+            "delay": "2000",
+            "execAfterDelay": false
+        }
+    ]
+}
